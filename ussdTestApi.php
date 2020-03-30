@@ -1,3 +1,4 @@
+<html>
 <?php
 // Reads the variables sent via POST from our gateway
 $sessionId   = $_POST["sessionId"];
@@ -40,3 +41,4 @@ if ($text == "") {
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $responses
+</html>
