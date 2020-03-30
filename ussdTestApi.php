@@ -41,4 +41,5 @@ if ($text == "") {
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $responses
+?>
 </html>
