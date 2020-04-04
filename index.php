@@ -20,21 +20,21 @@ if ($text == "") {
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your phone number is ".$phoneNumber;
+    $response = "END Your phone number is "";
 
 } else if($text == "1*1") { 
     // This is a second level response where the user selected 1 in the first instance
-    $accountNumber  = "ACC1001";
+//$accountNumber  = "ACC1001";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your account number is ".$accountNumber;
+    $response = "END Your account number is "";
 
 } else if ( $text == "1*2" ) {
     // This is a second level response where the user selected 1 in the first instance
-    $balance  = "KES 10,000";
+//     $balance  = "KES 10,000";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your balance is ".$balance;
+    $response = "END Your balance is "";
 }
 
 // Echo the response back to the API
