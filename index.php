@@ -65,5 +65,6 @@ if (sizeof($textArr) ==2) {
 	
 	//var_dump($result);
 
-    ?>
+    
 }
+?>
