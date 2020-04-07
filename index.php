@@ -74,7 +74,7 @@ else if ( $text == "3*1" ) {
 }
 else if ( $text == "3*2" ) {
     // This is a second level response where the user selected 1 in the first instance
-    $covidInfo = "Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze.";
+    $covidInfo = "is an infectious disease caused by a new virus.The disease causes respiratory illness (like the flu) with symptoms such as a cough, fever, and in more severe cases, difficulty breathing";
 
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
