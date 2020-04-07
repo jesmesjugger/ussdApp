@@ -70,14 +70,14 @@ else if ( $text == "3*1" ) {
     $covidNews  = "Kenya records 14 more Covid-19 cases, 3 other recoveries";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$covidNews;
+    $response = "Latest News ".$covidNews;
 }
 else if ( $text == "3*2" ) {
     // This is a second level response where the user selected 1 in the first instance
     $covidInfo = "Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze.";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$covidInfo;
+    $response = "What is Covid-19".$covidInfo;
 }
 // Echo the response back to the API
 header('Content-type: text/plain');
