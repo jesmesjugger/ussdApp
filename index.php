@@ -18,6 +18,7 @@ if ($text == "") {
     $response .= "1. Account number \n";
     $response .= "2. Account balance \n";
     $response .= "3. Open New Account";
+    $response .= "0. HOME";
 
 } else if ($text == "2") {
     // Business logic for first level response
