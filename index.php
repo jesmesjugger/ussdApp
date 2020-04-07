@@ -22,7 +22,7 @@ if ($text == "") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "END Your phone number is ".$phoneNumber;
-} else if ($text == "1*3") {
+} else if ($text! == "1") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "CON Choose type of account register \n";
