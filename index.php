@@ -36,13 +36,13 @@ if ($text == "") {
     // This is a terminal request. Note how we start the response with END
     $response = "END Your balance is ".$balance;
 }
-else if ($text !== "1" && $text !== "2" or $text !== "3"  ) {
+else if ($text == "3"  ) {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "CON Choose type of account register \n";
     //$response = "CON Choose the type of account register \n";
-    $response .= "a. Mobile Banking \n";
-    $response .= "b. Physical Bank";
+    $response .= "1. Mobile Banking \n";
+    $response .= "2. Physical Bank";
 
 } 
 else if ( $text == "a" ) {
