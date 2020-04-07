@@ -25,7 +25,8 @@ if ($text == "") {
 } else if ($text == "3") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    $response = "CON Choose the type of account register \n";
+    $response = "CON Choose type of account register \n";
+    //$response = "CON Choose the type of account register \n";
     $response .= "1. Mobile Banking \n";
     $response .= "2. Physical Bank";
 
