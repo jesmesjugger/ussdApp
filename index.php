@@ -17,7 +17,7 @@ if ($text == "") {
     $response = "CON Choose account information you want to view \n";
     $response .= "1. Account number \n";
     $response .= "2. Account balance \n";
-    $response .= "3. Open New Account";
+    $response .= "3. Open New Account \n";
     $response .= "0. HOME";
 
 } else if ($text == "2") {
