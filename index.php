@@ -45,14 +45,14 @@ else if ($text !== "1" && $text !== "2" or $text !== "3"  ) {
     $response .= "2. Physical Bank";
 
 } 
-else if ( $text == "3*1" ) {
+else if ( $text == "1" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account  = "Mobile Banking Account";
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account;
 }
-else if ( $text == "3*2" ) {
+else if ( $text == "2" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account1  = "Physical Bank";
 
