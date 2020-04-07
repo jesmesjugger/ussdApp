@@ -36,7 +36,7 @@ if ($text == "") {
     // This is a terminal request. Note how we start the response with END
     $response = "END Your balance is ".$balance;
 }
-else if ($text == "3"  ) {
+else if ($text !== "2"  ) {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "CON Choose type of account register \n";
@@ -45,14 +45,14 @@ else if ($text == "3"  ) {
     $response .= "2. Physical Bank";
 
 } 
-else if ( $text == "a" ) {
+else if ( $text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account  = "Mobile Banking Account";
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account;
 }
-else if ( $text == "b" ) {
+else if ( $text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account1  = "Physical Bank";
 
