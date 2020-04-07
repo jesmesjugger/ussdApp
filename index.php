@@ -7,9 +7,10 @@ $text        = $_POST["text"];
 
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
-    $response  = "CON What would you want to check \n";
+    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
     $response .= "1. My Account \n";
     $response .= "2. My phone number";
+    $response .= "3. Get Covid-19 Updates";
 
 } else if ($text == "1") {
     // Business logic for first level response
@@ -22,7 +23,14 @@ if ($text == "") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "END Your phone number is ".$phoneNumber;
-} else if($text == "1*1") { 
+}else if ($text == "3") {
+        // Business logic for first level response
+        $response = "CON Choose your prefered Covid-19  \n";
+        $response .= "1. Get  Current News On Covid-19 \n";
+        $response .= "2. Get information on Safety ways from Covid-19 \n";
+    
+    } 
+else if($text == "1*1") { 
     // This is a second level response where the user selected 1 in the first instance
     $accountNumber  = "ACC1001";
 
@@ -56,6 +64,20 @@ else if ( $text == "1*3*2" ) {
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account1;
+}
+else if ( $text == "3*1" ) {
+    // This is a second level response where the user selected 1 in the first instance
+    $covidNews  = "Kenya records 14 more Covid-19 cases, 3 other recoveries";
+
+    // This is a terminal request. Note how we start the response with END
+    $response = "END Your Account type will be ".$covidNews;
+}
+else if ( $text == "3*2" ) {
+    // This is a second level response where the user selected 1 in the first instance
+    $covidInfo = "Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze.";
+
+    // This is a terminal request. Note how we start the response with END
+    $response = "END Your Account type will be ".$covidInfo;
 }
 // Echo the response back to the API
 header('Content-type: text/plain');
