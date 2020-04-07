@@ -1,65 +1,69 @@
 <?php
+
 // Reads the variables sent via POST from our gateway
 $sessionId   = $_POST["sessionId"];
 $serviceCode = $_POST["serviceCode"];
 $phoneNumber = $_POST["phoneNumber"];
 $text        = $_POST["text"];
 
-if ($text == "") {
-    // This is the first request. Note how we start the response with CON
-    $response  = "CON What would you want to check \n";
-    $response .= "1. My Account \n";
-    $response .= "2. My phone number";
+$response = '';
 
-} else if ($text == "1") {
-    // Business logic for first level response
-    $response = "CON Choose account information you want to view \n";
-    $response .= "1. Account number \n";
-    $response .= "2. Account balance \n";
-    $response .= "3. Open New Account";
+$textArr = explode('*', $text); 
 
-} else if ($text == "2") {
-    // Business logic for first level response
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your phone number is ".$phoneNumber;
-else if ($text == "3") {
-    // Business logic for first level response
-    // This is a terminal request. Note how we start the response with END
-    $response = "CON Choose type of account register \n";
-    //$response = "CON Choose the type of account register \n";
-    $response .= "1. Mobile Banking \n";
-    $response .= "2. Physical Bank";
+if ( $textArr[0] == null ) {
 
-} 
-} else if($text == "1*1") { 
-    // This is a second level response where the user selected 1 in the first instance
-    $accountNumber  = "ACC1001";
+	 // This is the first request. Note how we start the response with CON
+	 $response = "CON Welcome to Unganisha. What is your emergency? \n";
+	 $response .= "1. Road Accident \n";
+	 $response .= "2. Poisoning \n";
+	 $response .= "3. Unconsious Person \n";
 
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your account number is ".$accountNumber;
-
-} else if ( $text == "1*2" ) {
-    // This is a second level response where the user selected 1 in the first instance
-    $balance  = "KES 10,000";
-
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your balance is ".$balance;
 }
-else if ( $text == "3*1" ) {
-    // This is a second level response where the user selected 1 in the first instance
-    $account  = "Mobile Banking Account";
-
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$account;
+else if (array_key_exists(1, $textArr) ) { 
+	$response = "END Help is on the way. Someone will call you shortly with further instructions.";
+	 
 }
-else if ( $text == "3*2" ) {
-    // This is a second level response where the user selected 1 in the first instance
-    $account1  = "Physical Bank";
 
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$account1;
+else if ( $textArr[0] != null && $textArr[0] == "1" || $textArr[0] == "2" || $textArr[0] == "3" && array_key_exists(1,$textArr) === false ) {
+    
+  $response = "CON Where are you? e.g Runda, Muthaiga, Kibera \n";
+  
+ }
+
+if($textArr[0] == 1){
+	$textArr[0] = 'Road Accident';
+} else if ($textArr[0] == 2) {
+    $textArr[0] = 'poisoning';
+} else if ($textArr[0] == 3) {
+    $textArr[0] = 'Unconsious person';
 }
-// Echo the response back to the API
+
+
+
+
+// Print the response onto the page so that our gateway can read it
 header('Content-type: text/plain');
-echo $response;
+
+if ($response == "") { $response = "END Help is on the way. Someone will call you shortly with further instructions."; }
+echo $response ;
+
+if (sizeof($textArr) ==2) {
+	$url = 'http://unganisha-b.herokuapp.com/api/';
+	$data = array('latitude' => 0, 'longitude' => 0, 'description' => $textArr[0], 'number' => $phoneNumber, 'location' => $textArr[1], 'timestamp' => '2018' );
+	
+	// use key 'http' even if you send the request to https://...
+	$options = array(
+		'http' => array(
+			'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+			'method'  => 'POST',
+			'content' => http_build_query($data)
+		)
+	);
+	$context  = stream_context_create($options);
+	$result = file_get_contents($url, false, $context);
+	if ($result === FALSE) { /* Handle error */ }
+	
+	//var_dump($result);
+
+}
 ?>
