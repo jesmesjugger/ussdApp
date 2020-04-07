@@ -56,14 +56,14 @@ else if ( $text == "1*3*1" ) {
     $account  = "Mobile Banking Account";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$account;
+    $response = "END Your Account type will be ".$account."Please download our mobile application ";
 }
 else if ( $text == "1*3*2" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account1  = "Physical Bank";
 
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your Account type will be ".$account1;
+    $response = "END Your Account type will be ".$account1." Please visit any Nearest Faulu Bank ";
 }
 else if ( $text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
