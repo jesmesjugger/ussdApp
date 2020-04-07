@@ -15,7 +15,7 @@ if ($text == "") {
     // Business logic for first level response
     $response = "CON Choose account information you want to view \n";
     $response .= "1. Account number \n";
-    $response .= "2. Account balance\n";
+    $response .= "2. Account balance \n";
     $response .= "3. Open New Account";
 
 } else if ($text == "2") {
