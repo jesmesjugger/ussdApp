@@ -16,11 +16,18 @@ if ($text == "") {
     $response = "CON Choose account information you want to view \n";
     $response .= "1. Account number \n";
     $response .= "2. Account balance";
+    $response .= "3. Open New Account";
 
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "END Your phone number is ".$phoneNumber;
+} else if ($text == "3") {
+    // Business logic for first level response
+    // This is a terminal request. Note how we start the response with END
+    $response = "CON Choose the type of account register \n";
+    $response .= "1. Mobile Banking \n";
+    $response .= "2. Physical Bank";
 
 } else if($text == "1*1") { 
     // This is a second level response where the user selected 1 in the first instance
@@ -36,7 +43,20 @@ if ($text == "") {
     // This is a terminal request. Note how we start the response with END
     $response = "END Your balance is ".$balance;
 }
+else if ( $text == "3*1" ) {
+    // This is a second level response where the user selected 1 in the first instance
+    $account  = "Mobile Banking Account";
 
+    // This is a terminal request. Note how we start the response with END
+    $response = "END Your Account type will be ".$account;
+}
+else if ( $text == "3*2" ) {
+    // This is a second level response where the user selected 1 in the first instance
+    $account1  = "Physical Bank";
+
+    // This is a terminal request. Note how we start the response with END
+    $response = "END Your Account type will be ".$account1;
+}
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $response;
