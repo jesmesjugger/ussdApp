@@ -35,6 +35,7 @@ if ($text == "") {
     $response .= "1. My Account \n";
     $response .= "2. My phone number \n";
     $response .= "3. Get Covid-19 Updates";
+    break;
  }
 else if($text == "1*1") { 
     // This is a second level response where the user selected 1 in the first instance
