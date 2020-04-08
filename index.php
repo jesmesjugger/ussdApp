@@ -51,26 +51,26 @@ else if($text == "1*1") {
     $response .= "1. Mobile Banking \n";
     $response .= "2. Physical Bank";
 }
-else if ( $text == "1*3*1" ) {
+else if ( $text == "1*4 ) {
     // This is a second level response where the user selected 1 in the first instance
     $account  = "Mobile Banking Account";
 
     // This is a terminal request. Note how we start the response with END
     $response = "CON Please enter your first name";
 }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 2) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 5) {
             $response = "CON Please enter your last name";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 3) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
             $response = "CON Please enter your phone number";
         }
- elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 4) {
+ elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
             $response = "CON Please enter your National Identity card Number";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 5) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 8) {
             $response = "CON Please enter your Email Address";
         }
-        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
+        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 9) {
             // save data in the database
             $response = "END Your data has been captured successfully! Thank you for opening bank account with Faulu Bank";
         }
