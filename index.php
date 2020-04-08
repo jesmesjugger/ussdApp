@@ -102,7 +102,7 @@ else if ( $text == "3*2" ) {
     $response .= "1. My Account \n";
     $response .= "2. My phone number \n";
     $response .= "3. Get Covid-19 Updates";
-    reset($text);
+//     reset($text);
 }
 // Echo the response back to the API
 header('Content-type: text/plain');
