@@ -15,7 +15,7 @@ if ($text == "" ) {
     $response .= "2. My phone number \n";
     $response .= "3. Get Covid-19 Updates";
 
-}else if($text!=="0" ) {
+}else if($text =="0" ) {
     $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
     $response .= "1. My Account \n";
     $response .= "2. My phone number \n";
