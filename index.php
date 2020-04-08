@@ -97,7 +97,7 @@ else if ( $text == "3*2" ) {
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
 }
-else if($text!=="1" && $text!=="2" && $text!=="3"  ) {
+else if($text!=="1" && $text!=="2" && $text!=="3" $ussd_string_exploded[0] == 0 ) {
     $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
     $response .= "1. My Account \n";
     $response .= "2. My phone number \n";
