@@ -29,7 +29,11 @@ if ($text == "") {
         $response = "CON Choose your prefered Covid-19  \n";
         $response .= "1. Get  Current News On Covid-19 \n";
         $response .= "2. Get information on Safety ways from Covid-19 \n";
-    
+    else if( $text == "1*0" ) {
+    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
+    $response .= "1. My Account \n";
+    $response .= "2. My phone number \n";
+    $response .= "3. Get Covid-19 Updates";
     } 
 else if($text == "1*1") { 
     // This is a second level response where the user selected 1 in the first instance
@@ -65,13 +69,7 @@ else if ( $text == "1*3*2" ) {
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account1." Please visit any Nearest Faulu Bank ";
-}
-else if( $text == "3*0" ) {
-    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
-    $response .= "1. My Account \n";
-    $response .= "2. My phone number \n";
-    $response .= "3. Get Covid-19 Updates";
-     }
+}     }
 else if ( $text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
     $covidNews  = "Kenya records 14 more Covid-19 cases, 3 other recoveries";
