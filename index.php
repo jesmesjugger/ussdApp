@@ -20,10 +20,6 @@ if ($text == "" || $text == "1*0"|| $text == "*0") {
     $response .= "3. Open New Account \n";
     $response .= "0. HOME";
 
-} else if ($text == "2") {
-    // Business logic for first level response
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your phone number is ".$phoneNumber;
 }else if ($text == "3") {
         // Business logic for first level response
         $response = "CON Choose your prefered Covid-19  \n";
@@ -47,40 +43,42 @@ else if($text == "1*1") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "CON Choose type of account register \n";
-    //$response = "CON Choose the type of account register \n";
     $response .= "1. Mobile Banking \n";
     $response .= "2. Physical Bank";
 }
-else if ( $text == "1*4 ) {
-    // This is a second level response where the user selected 1 in the first instance
-    $account  = "Mobile Banking Account";
-
-    // This is a terminal request. Note how we start the response with END
+elseif ($text == "1*4") {
+    // when use response with option django
     $response = "CON Please enter your first name";
 }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 5) {
+
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
             $response = "CON Please enter your last name";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
             $response = "CON Please enter your phone number";
         }
- elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
+ elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 8) {
             $response = "CON Please enter your National Identity card Number";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 8) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 9) {
             $response = "CON Please enter your Email Address";
         }
-        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 9) {
+        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 10) {
             // save data in the database
             $response = "END Your data has been captured successfully! Thank you for opening bank account with Faulu Bank";
         }
 
-else if ( $text == "1*3*2" ) {
+else if ( $text == "1*5" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account1  = "Physical Bank";
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account1." Please visit any Nearest Faulu Bank ";
+}
+else if ($text == "2") {
+    // Business logic for first level response
+    // This is a terminal request. Note how we start the response with END
+    $response = "END Your phone number is ".$phoneNumber;
 }
 else if ( $text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
@@ -96,12 +94,7 @@ else if ( $text == "3*2" ) {
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
 }
-else if( $text == "0" ) {
-    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
-    $response .= "1. My Account \n";
-    $response .= "2. My phone number \n";
-    $response .= "3. Get Covid-19 Updates";
-     }
+
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $response;
