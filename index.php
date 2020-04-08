@@ -8,7 +8,7 @@ $ussd_string_exploded = explode("*", $text);
         // Get ussd menu level number from the gateway
         $level = count($ussd_string_exploded);
 
-if ($text == "" || $text == "1*0"|| $text == "*0") {
+if ($text == "" ) {
     // This is the first request. Note how we start the response with CON
     $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
     $response .= "1. My Account \n";
@@ -96,6 +96,9 @@ else if ( $text == "3*2" ) {
 
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
+}
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 0 && $level == 0) {
+   
 }
 
 // Echo the response back to the API
