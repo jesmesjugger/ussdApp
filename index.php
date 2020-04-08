@@ -15,7 +15,13 @@ if ($text == "" ) {
     $response .= "2. My phone number \n";
     $response .= "3. Get Covid-19 Updates";
 
-} else if ($text == "1") {
+}else if($text!=="0" ) {
+    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
+    $response .= "1. My Account \n";
+    $response .= "2. My phone number \n";
+    $response .= "3. Get Covid-19 Updates";
+}
+else if ($text == "1") {
     // Business logic for first level response
     $response = "CON Choose account information you want to view \n";
     $response .= "1. Account number \n";
@@ -97,12 +103,7 @@ else if ( $text == "3*2" ) {
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
 }
-else if($text!=="1" && $text!=="2" && $text!=="3" $ussd_string_exploded[0] == 0 ) {
-    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
-    $response .= "1. My Account \n";
-    $response .= "2. My phone number \n";
-    $response .= "3. Get Covid-19 Updates";
-}
+
 
 // Echo the response back to the API
 header('Content-type: text/plain');
