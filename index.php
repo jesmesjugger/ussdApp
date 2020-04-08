@@ -98,7 +98,10 @@ else if ( $text == "3*2" ) {
     $response = "END What is Covid-19".$covidInfo;
 }
 else if($text!=="1" && $text!=="2" && $text!=="3"  ) {
-   return [0]:
+    $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
+    $response .= "1. My Account \n";
+    $response .= "2. My phone number \n";
+    $response .= "3. Get Covid-19 Updates";
 }
 
 // Echo the response back to the API
