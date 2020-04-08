@@ -4,6 +4,9 @@ $sessionId   = $_POST["sessionId"];
 $serviceCode = $_POST["serviceCode"];
 $phoneNumber = $_POST["phoneNumber"];
 $text        = $_POST["text"];
+$ussd_string_exploded = explode("*", $text);
+        // Get ussd menu level number from the gateway
+        $level = count($ussd_string_exploded);
 
 if ($text == "" || $text == "1*0"|| $text == "*0") {
     // This is the first request. Note how we start the response with CON
