@@ -49,29 +49,29 @@ else if($text == "1*1") {
     $response .= "1. Mobile Banking \n";
     $response .= "2. Physical Bank";
 }
-elseif ($text == "1*4") {
+elseif ($text == "1*3*1") {
     // when use response with option django
     $response = "CON Please enter your first name";
 }
 
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 3) {
             $response = "CON Please enter your last name";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 4) {
             $response = "CON Please enter your phone number";
         }
- elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 8) {
+ elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 5) {
             $response = "CON Please enter your National Identity card Number";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 9) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
             $response = "CON Please enter your Email Address";
         }
-        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 10) {
+        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
             // save data in the database
             $response = "END Your data has been captured successfully! Thank you for opening bank account with Faulu Bank";
         }
 
-else if ( $text == "1*5" ) {
+else if ( $text == "1*3*2" ) {
     // This is a second level response where the user selected 1 in the first instance
     $account1  = "Physical Bank";
 
