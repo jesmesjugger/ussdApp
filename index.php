@@ -5,7 +5,7 @@ $serviceCode = $_POST["serviceCode"];
 $phoneNumber = $_POST["phoneNumber"];
 $text        = $_POST["text"];
 
-if ($text == "" &&$text == "1*0") {
+if ($text == "" || $text == "1*0") {
     // This is the first request. Note how we start the response with CON
     $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
     $response .= "1. My Account \n";
