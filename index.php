@@ -97,8 +97,8 @@ else if ( $text == "3*2" ) {
     // This is a terminal request. Note how we start the response with END
     $response = "END What is Covid-19".$covidInfo;
 }    if ($text=="1*0"){
-        $response="END  ";
-        reset($text);
+        $response="END  ...";
+        reset($level);
 }
 // Echo the response back to the API
 header('Content-type: text/plain');
