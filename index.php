@@ -54,19 +54,19 @@ elseif ($text == "1*3*1") {
     $response = "CON Please enter your first name";
 }
 
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 3) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 3 && $level == 3) {
             $response = "CON Please enter your last name";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 4) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 3 && $level == 4) {
             $response = "CON Please enter your phone number";
         }
- elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 5) {
+ elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 3 && $level == 5) {
             $response = "CON Please enter your National Identity card Number";
         }
-elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 6) {
+elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 3 && $level == 6) {
             $response = "CON Please enter your Email Address";
         }
-        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 7) {
+        elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 3 && $level == 7) {
             // save data in the database
             $response = "END Your data has been captured successfully! Thank you for opening bank account with Faulu Bank";
         }
