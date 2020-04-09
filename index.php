@@ -89,19 +89,19 @@ else if ( $refreshed_text == "1*3*2" ) {
     // This is a terminal request. Note how we start the response with END
     $response = "END Your Account type will be ".$account1." Please visit any Nearest Faulu Bank ";
 }
-else if ($text == "2") {
+else if ($refreshed_text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
     $response = "END Your phone number is ".$phoneNumber;
 }
-else if ( $text == "3*1" ) {
+else if ( $refreshed_text == "3*1" ) {
     // This is a second level response where the user selected 1 in the first instance
     $covidNews  = "Kenya records 14 more Covid-19 cases, 3 other recoveries";
 
     // This is a terminal request. Note how we start the response with END
     $response = "END Latest News ".$covidNews;
 }
-else if ( $text == "3*2" ) {
+else if ( $refreshed_text == "3*2" ) {
     // This is a second level response where the user selected 1 in the first instance
     $covidInfo = "is an infectious disease caused by a new virus.The disease causes respiratory illness (like the flu) with symptoms such as a cough, fever, and in more severe cases, difficulty breathing";
 
