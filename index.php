@@ -7,8 +7,8 @@ $text        = $_POST["text"];
 $ussd_string_exploded = explode("*", $text);
         // Get ussd menu level number from the gateway
         $level = count($ussd_string_exploded);
-        $text="0";
-        global $text;
+//         $text="0";
+//         global $text;
 if ($text == ""|| $text=="0") {
     // This is the first request. Note how we start the response with CON
     $response  = "CON Welcome to OldMutual Kindly Select one Option \n";
